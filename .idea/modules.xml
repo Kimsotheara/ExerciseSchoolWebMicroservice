@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Exercises.iml" filepath="$PROJECT_DIR$/.idea/Exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/Promotion/Promotion.iml" filepath="$PROJECT_DIR$/Promotion/Promotion.iml" />
       <module fileurl="file://$PROJECT_DIR$/User/User.iml" filepath="$PROJECT_DIR$/User/User.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
     </modules>
   </component>
 </project>

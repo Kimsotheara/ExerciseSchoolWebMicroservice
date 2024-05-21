@@ -7,13 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Promotion" />
+        <module name="api-gateway" />
         <module name="User" />
+        <module name="Promotion" />
+        <module name="eureka-server" />
         <module name="CategoryAndCourse" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-gateway" target="17" />
       <module name="CategoryAndCourse" target="17" />
+      <module name="eureka-server" target="17" />
       <module name="Promotion" target="17" />
       <module name="User" target="17" />
     </bytecodeTargetLevel>
@@ -23,6 +27,8 @@
       <module name="CategoryAndCourse" options="-parameters" />
       <module name="Promotion" options="-parameters" />
       <module name="User" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
     </option>
   </component>
 </project>

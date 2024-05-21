@@ -5,8 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "Promotion", url = "http://localhost:8089/promotion")
+@FeignClient(value = "Promotion", url = "${api.gateway.url}")
 public interface ApiPromotion {
-    @GetMapping("/id/{promId}")
+    @GetMapping("/promotion/id/{promId}")
     PromotionDto getPromotionById(@PathVariable Integer promId);
 }

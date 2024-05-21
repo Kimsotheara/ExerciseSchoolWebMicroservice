@@ -1,22 +1,33 @@
 
 # Exercises
 
-I have 3 microservices 
+I have 5 microservices 
 
-## One service Category and Course
+## First service Category and Course
+
 - postgresql for database : CateAndCourseDb
 - server port 8088
+- A microservice responsible for Category and Course related operations.
 
-## Two service Promotion
+## Second service Promotion
 
 - mysql for database : promotionDb
 - server port 8089
+- A microservice responsible for Promotion-related operations.
 
 
-## Tree service User
+## Third service User
 - mysql for database : userDb
 - server port 8090
+- A microservice responsible for User-related operations.
 
+## Fourth service api-gateway
+- server port 8080
+- Handles routing of requests to the appropriate microservice.
+
+## Fifth service eureka registry
+- server port 8761
+-  Used for service discovery, allowing the microservices to register and locate each other.
 ## Scripting schema
 https://dbdiagram.io/
 ```bash

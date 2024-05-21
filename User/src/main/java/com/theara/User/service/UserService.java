@@ -60,6 +60,9 @@ public class UserService {
             courseDto.setCoursePrice(course.getCoursePrice());
             courseDtoList.add(courseDto);
         }
+        if (courseDtoList.size() != user.getCourseId().size()) {
+            return new ResponseDTO("Failed to retrieve course details for user id: " + id, Status.FAILED.value(), 500);
+        }
 
         userResponse.setCourseDtoList(courseDtoList);
         userResponse.setRegistrationDate(user.getRegistrationDate());
