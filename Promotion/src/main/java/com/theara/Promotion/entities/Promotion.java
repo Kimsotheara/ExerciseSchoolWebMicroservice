@@ -23,7 +23,7 @@ public class Promotion {
     private double discountAmount;
     private Date startDate;
     private Date endDate;
-    private Integer courseId;
+    //private Integer courseId;
     private boolean isDelete = false;
 
 }

@@ -47,7 +47,7 @@ Table promotion{
   start_date datetime
   end_date datetime
   is_delete boolean [default: false]
-  course_id int [ref: > course.cate_id]
+  ##course_id int [ref: > course.cate_id]
 }
 
 Table user{
