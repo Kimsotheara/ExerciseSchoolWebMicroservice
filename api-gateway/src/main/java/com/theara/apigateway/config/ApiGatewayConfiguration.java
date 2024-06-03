@@ -18,6 +18,8 @@ public class ApiGatewayConfiguration {
                         .uri("lb://CategoryAndCourse"))
                 .route("promotion", r -> r.path("/promotion/**")
                         .uri("lb://Promotion"))
+                .route("payment", r -> r.path("/payment/**")
+                        .uri("lb://payment-service"))
                 .route("user", r -> r.path("/user/**")
                         .uri("lb://User"))
                 .build();

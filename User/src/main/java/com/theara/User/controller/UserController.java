@@ -2,8 +2,10 @@ package com.theara.User.controller;
 
 import com.theara.User.Dto.CreateUserDto;
 import com.theara.User.Dto.UpdateUserDto;
+import com.theara.User.Dto.UserResponsePayment;
 import com.theara.User.constant.ResponseDTO;
 import com.theara.User.service.UserService;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +27,10 @@ public class UserController {
     @GetMapping("/id/{id}")
     public ResponseDTO findUserById(@PathVariable Integer id){
         return this.userService.getUserById(id);
+    }
+    @GetMapping("/find/id/{id}")
+    public UserResponsePayment getUserForPayment(@PathVariable Integer id){
+        return this.userService.getUserForPayment(id);
     }
     @PostMapping("/create")
     public ResponseDTO create(@RequestBody CreateUserDto createUserDto){

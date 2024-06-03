@@ -1,6 +1,7 @@
 package com.theara.payment.service.controller;
 
 import com.theara.payment.service.Dto.CreatePaymentDto;
+import com.theara.payment.service.Dto.ResponseResult;
 import com.theara.payment.service.Dto.UpdatePaymentDto;
 import com.theara.payment.service.constant.ResponseDTO;
 import com.theara.payment.service.entities.Payment;
@@ -14,12 +15,12 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseDTO findAll(){
         return this.paymentService.getAll();
     }
     @GetMapping("/id/{id}")
-    public Payment findPaymentById(@PathVariable Integer id){
+    public ResponseResult findPaymentById(@PathVariable Integer id){
         return this.paymentService.getPaymentById(id);
     }
     @PostMapping("/create")

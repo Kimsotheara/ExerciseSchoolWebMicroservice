@@ -35,6 +35,37 @@ public class UserService {
             return new ResponseDTO("Failed to fetch user", Status.FAILED.value(), 500);
         }
     }
+    public UserResponsePayment getUserForPayment(Integer id){
+        User user = this.checkUser(id);
+
+        if (user.getCourseId().isEmpty()) {
+            throw new RuntimeException("Failed to retrieve course details for user id: " + id);
+        }
+        double totalCoursePrice = 0.0;
+        for (Integer courseId : user.getCourseId()) {
+            CourseDto course = this.apiCourse.getCourseById(courseId);
+            totalCoursePrice += course.getCoursePrice();
+        }
+        PromotionDto promotion;
+        double promotionDis = 0.0;
+        try {
+            promotion = this.apiPromotion.getPromotionById(user.getPromId());
+            promotionDis += promotion.getDiscountAmount();
+        } catch (FeignException e) {
+            throw  new RuntimeException("Failed to retrieve promotion for user id: " + id);
+        }
+        double total = totalCoursePrice - promotionDis;
+
+        UserResponsePayment response = new UserResponsePayment();
+        response.setUserName(user.getUserName());
+        response.setEmail(user.getEmail());
+        response.setRegistrationDate(user.getRegistrationDate());
+        response.setAmountCourse(totalCoursePrice);
+        response.setPromotionDiscount(promotionDis);
+        response.setTotalPayment(total);
+        return response;
+
+    }
     public ResponseDTO getUserById(Integer id){
         User user = this.checkUser(id);
 

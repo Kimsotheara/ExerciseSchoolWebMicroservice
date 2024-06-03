@@ -81,6 +81,7 @@ TABLE payment {
     payment_id INT [pk, increment]
     user_id INT [ref: > user.user_id]
     amount double
+    balance double
     payment_date DATE
     payment_status enum('paid','unpaid','installment')
     payment_method ENUM('Full', 'Installments')

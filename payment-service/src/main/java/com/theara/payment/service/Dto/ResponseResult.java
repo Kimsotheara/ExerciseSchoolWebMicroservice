@@ -13,8 +13,8 @@ import java.util.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreatePaymentDto {
-    private Integer userId;
+public class ResponseResult {
+    private UserResponsePayment userResponsePayment;
     private double amount;
     private double balance;
     private Date payDate;

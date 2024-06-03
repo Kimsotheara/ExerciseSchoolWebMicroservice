@@ -18,7 +18,8 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer payId;
     private Integer userId;
-    private double aDouble;
+    private double amount;
+    private double balance;
     private Date payDate;
     @Enumerated(EnumType.STRING)
     private PayStatus payStatus;
