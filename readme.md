@@ -1,7 +1,7 @@
 
 # Exercises
 
-I have 5 microservices 
+I have 6 microservices 
 
 ## First service Category and Course
 
@@ -15,19 +15,24 @@ I have 5 microservices
 - server port 8089
 - A microservice responsible for Promotion-related operations.
 
-
 ## Third service User
 - mysql for database : userDb
 - server port 8090
 - A microservice responsible for User-related operations.
+- 
+## Fourth service Payment
+- postgresql for database : paymentDb
+- server port 8091
+- A microservice responsible for payment operations.
 
-## Fourth service api-gateway
+## Fifth service api-gateway
 - server port 8080
 - Handles routing of requests to the appropriate microservice.
 
-## Fifth service eureka registry
+## Sex service eureka registry
 - server port 8761
--  Used for service discovery, allowing the microservices to register and locate each other.
+- Used for service discovery, allowing the microservices to register and locate each other.
+
 ## Scripting schema
 https://dbdiagram.io/
 ```bash
@@ -48,7 +53,6 @@ Table course{
   is_delete boolean [default: false]
   cate_id int [ref: > category.cate_id]
 }
-
 
 Table promotion{
   prom_id int [pk, increment]
@@ -82,6 +86,11 @@ TABLE payment {
     payment_method ENUM('Full', 'Installments')
   
 }
+
 ```
+## End Points
+localhost/:8080/user
+
+
 
 
