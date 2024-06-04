@@ -18,4 +18,6 @@ public class CreateCourseDto {
     private String courseEmail;
     private Category category;
     private double coursePrice;
+    private boolean isDelete = false;
+    private boolean isPromotion = false;
 }
