@@ -1,6 +1,102 @@
 
 # Exercises
+## Postman collections
+```bash
+create category http://localhost:8080/cate/create
+{
+    "cateName": "IT Software",
+    "cateDesc": "Hello world"
+}
+update category  http://localhost:8080/cate/update
+{
+    "cateId": 1,
+    "cateName": "IT Software",
+    "cateDesc": "Hello world"
+}
 
+create course http://localhost:8080/course/create
+{
+    "courseName": "Unit test 1",
+    "courseDesc": "Online",
+    "courseTeach": "YOUTUBE",
+    "coursePrice": 150,
+    "courseEmail": "kak@gmail.com",
+    "category": {
+        "cateId": 1
+    }
+}
+update course http://localhost:8080/course/update
+{
+    "courseId": 1,
+    "courseName": "Unit test 1",
+    "courseDesc": "Online",
+    "courseTeach": "YOUTUBE",
+    "coursePrice": 150,
+    "courseEmail": "kak@gmail.com",
+    "category": {
+        "cateId": 1
+    }
+}
+
+create promotion http://localhost:8080/promotion/create
+{
+    "promName": "Black Friday",
+    "promDesc": "kak 2",
+    "discountAmount": 16.0,
+    "startDate": "2024-05-20",
+    "endDate": "2024-05-20"
+}
+update promotion http://localhost:8080/promotion/update
+{
+    "promId" : 1,
+    "promName": "Black Friday",
+    "promDesc": "kak 2",
+    "discountAmount": 16.0,
+    "startDate": "2024-05-20",
+    "endDate": "2024-05-20"
+}
+
+create user http://localhost:8080/user/create
+{
+    "userName": "student 1",
+    "email": "testingkak@gmail.com",
+    "registrationDate": "2024-05-20",
+    "courseId": [
+        6,
+        2
+    ],
+    "promId": 3,
+    "userType": "STAFF"
+}
+update user http://localhost:8080/user/update
+{
+    "userId": 1,
+    "userName": "student 1",
+    "email": "testingkak@gmail.com",
+    "registrationDate": "2024-05-20",
+    "courseId": [
+        6,
+        2
+    ],
+    "promId": 3,
+    "userType": "STAFF"
+}
+
+create payment http://localhost:8080/payment/create
+{
+
+    "userId": 2,
+    "amount": 1802,
+    "payDate": "2024-05-20"
+} 
+update payment http://localhost:8080/payment/update
+{
+    "payId": 1,
+    "userId": 2,
+    "amount": 1802,
+    "payDate": "2024-05-20"
+}
+```
 I have 6 microservices 
 ## service api-gateway
 - server port 8080
